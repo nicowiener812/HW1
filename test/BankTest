@@ -1,0 +1,13 @@
+import static org.junit.jupiter.api.Assertions.*;
+@Test
+void testDeposit() {
+    //Create an account and deposit some money
+    IAccount account = new StandardAccount(1, -100);
+    account.deposit(200.0);
+
+    //Get the current balance
+    double currentBalance = account.getCurrentBalance();
+
+    //Check if the current balance matches the expected balance after the deposit
+    assertEquals(200.0, currentBalance, 0.01); // 0.01 is the delta for comparing double values
+}
